@@ -1,2 +1,12 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import type { MigrantWorker } from "$lib/types";
+
+    export let data;
+    let { migrants } = data;
+</script>
+
+<ul>
+    {#each migrants as item, i}
+    <li class="my-10">{JSON.stringify(item)}</li>
+    {/each}
+</ul>
